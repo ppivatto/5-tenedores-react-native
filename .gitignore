@@ -1,0 +1,23 @@
+node_modules/**/*
+.expo/*
+npm-debug.*
+*.jks
+*.p8
+*.p12
+*.key
+*.mobileprovision
+*.orig.*
+web-build/
+web-report/
+
+# macOS
+.DS_Store
+
+.idea/*
+
+# Expo
+.expo
+__generated__
+
+.idea/vcs.xml 
+.idea/inspectionProfiles/Project_Default.xml
