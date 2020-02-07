@@ -4,10 +4,10 @@ import { Icon } from 'react-native-elements';
 import { createAppContainer } from "react-navigation";
 import { createBottomTabNavigator } from "react-navigation-tabs";
 import RestaurantsScreenStacks from './RestaurantsStacks';
+import FavoritesScreenStacks from './FavoritesStacks';
 import TopListsScreenStacks from './TopListsStacks';
 import SearchScreenStacks from './SearchStacks';
 import AccountScreenStacks from './AccountStacks';
-
 
 const NavigationStacks = createBottomTabNavigator(
     {
@@ -19,6 +19,20 @@ const NavigationStacks = createBottomTabNavigator(
                     <Icon 
                         type={'material-community'} 
                         name={'compass-outline'} 
+                        size={22}
+                        color={tintColor}
+                    />
+                )
+            })
+        },
+        Favorites: {
+            screen: FavoritesScreenStacks,
+            navigationOptions: () => ({
+                tabBarLabel: 'Favoritos',
+                tabBarIcon: ({ tintColor }) => (
+                    <Icon
+                        type={'material-community'}
+                        name={'heart-outline'}
                         size={22}
                         color={tintColor}
                     />
@@ -69,8 +83,8 @@ const NavigationStacks = createBottomTabNavigator(
         },
     },
     {
-        initialRouteName: 'Account',
-        order: ['Restaurants', 'TopLists', 'Search', 'Account'],
+        initialRouteName: 'Restaurants',
+        order: ['Restaurants', 'Favorites', 'TopLists', 'Search', 'Account'],
         tabBarOptions: {
             inactiveTintColor:'#646464',
             activeTintColor: '#00a680'

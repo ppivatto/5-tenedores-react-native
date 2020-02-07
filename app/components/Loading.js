@@ -23,7 +23,7 @@ export default function Loading(props) {
 const styles = StyleSheet.create({
     overlay: {
         height: 100,
-        width: 120,
+        width: 160,
         backgroundColor: '#FFF',
         borderColor: '#00a680',
         borderWidth: 2,

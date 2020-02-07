@@ -15,11 +15,16 @@ export default function UserLogged() {
     const toastRef = useRef();
     
     useEffect(() => {
+        const abortController = new AbortController();
         (async () => {
             const user = await firebase.auth().currentUser;
             setUserInfo(user.providerData[0])
         })();
-        setReloadData(false)
+        setReloadData(false);
+    
+        return () => {
+            abortController.abort();
+        };
     }, [reloadData]);
     
     return (

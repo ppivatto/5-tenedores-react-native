@@ -15,7 +15,7 @@
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#00a680"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -24,13 +24,26 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": false
     },
     "android": {
+      "package": "com.yunikusoft.cincotenedores",
+      "versionCode": 1,
       "permissions": [
-        "CAMERA_ROLL"
-      ]
+        "CAMERA_ROLL",
+        "LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION",
+        "READ_EXTERNAL_STORAGE",
+        "WRITE_EXTERNAL_STORAGE"
+      ],
+      "config": {
+        "googleMaps": {
+          "apiKey": "AIzaSyCs-l9tH7pca38_-lATCXGLmTw0yNoteXI"
+        }
+      }
     },
-    "description": ""
+    "description": "",
+    "githubUrl": "https://github.com/ppivatto/5-tenedores-react-native"
   }
 }

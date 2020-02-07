@@ -8,9 +8,14 @@ export default function MyAccount() {
     const [login, setLogin] = useState(null);
     
     useEffect(() => {
+        const abortController = new AbortController();
         firebase.auth().onAuthStateChanged(user => {
             !user ? setLogin(false) : setLogin(true);
-        })
+        });
+    
+        return () => {
+            abortController.abort();
+        };
     }, []);
     
     if (login === null) {
